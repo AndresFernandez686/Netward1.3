@@ -1,3 +1,4 @@
+
 # Entrada de la app, orquesta de los modulos y las vistas
 import streamlit as st
 import os
@@ -12,18 +13,12 @@ def load_css():
     else:
         st.warning("No se encontró el archivo CSS personalizado.")
 
-# Cargar HTML personalizado con manejo mejorado de comentarios
+# Cargar HTML personalizado
 def load_html(html_file):
     html_path = os.path.join(os.path.dirname(__file__), '.streamlit', html_file)
     if os.path.exists(html_path):
         with open(html_path) as f:
-            html_content = f.read()
-            # Eliminar los comentarios HTML y las etiquetas de estilo CSS inicial que están causando problemas
-            if html_content.startswith('/*'):
-                html_content = html_content.split('*/', 1)[1] if '*/' in html_content else html_content
-            if html_content.startswith('<!-- filepath:'):
-                html_content = html_content.split('-->', 1)[1] if '-->' in html_content else html_content
-            return html_content
+            return f.read()
     else:
         st.warning(f"No se encontró el archivo HTML: {html_file}")
         return ""
