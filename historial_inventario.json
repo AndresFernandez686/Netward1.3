@@ -1,0 +1,58 @@
+[
+  {
+    "fecha": "2025-09-26",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-26",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 5,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-26",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 6,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja Bombon Crocante",
+    "cantidad": 4,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 6,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja almendrado",
+    "cantidad": 0,
+    "modo": "Modificar"
+  },
+  {
+    "fecha": "2025-09-27",
+    "usuario": "empleado1",
+    "categoria": "Impulsivo",
+    "producto": "Caja Bombon Crocante",
+    "cantidad": 0,
+    "modo": "Modificar"
+  }
+]
