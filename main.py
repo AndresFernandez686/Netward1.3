@@ -1,4 +1,3 @@
-
 # Entrada de la app, orquesta de los modulos y las vistas
 import streamlit as st
 import os
@@ -224,20 +223,10 @@ def main():
     elif st.session_state.rol == 'administrador':
         tab_inv, tab_hist, tab_deliv = st.tabs(["📦 Inventario", "📅 Historial", "🛠️ Delivery"])
         with tab_inv:
-            # Mostrar dashboard HTML para el administrador
-            dashboard_html = load_html('dashboard.html')
-            if dashboard_html:
-                st.markdown(dashboard_html, unsafe_allow_html=True)
-                
             admin_inventario_ui(inventario)
         with tab_hist:
             admin_historial_ui(cargar_historial())
         with tab_deliv:
-            # Mostrar formulario personalizado para delivery
-            forms_html = load_html('forms.html')
-            if forms_html:
-                st.markdown(forms_html, unsafe_allow_html=True)
-                
             admin_delivery_ui(
                 cargar_catalogo_delivery, guardar_catalogo_delivery, cargar_ventas_delivery
             )
