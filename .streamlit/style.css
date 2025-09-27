@@ -1,0 +1,38 @@
+/* Estilos globales para la aplicación Netward */
+
+/* Centrado de títulos */
+h1 {
+  text-align: center;
+  color: #0066ff;
+  margin-bottom: 20px;
+}
+
+.stSubheader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Estilo para botones */
+.stButton > button {
+  background-color: #0066ff;
+  color: white !important; /* Forzar color blanco siempre */
+  border-radius: 5px;
+  padding: 10px 24px;
+  width: 100%;
+}
+
+/* Arreglar el problema del hover en botones */
+.stButton > button:hover {
+  color: white !important; /* Mantener el texto blanco al pasar el mouse */
+  background-color: #0052cc; /* Opcional: un azul ligeramente más oscuro para feedback visual */
+}
+
+/* Asegurar que el texto no desaparezca en ningún estado */
+.stButton > button:active, .stButton > button:focus {
+  color: white !important;
+}
+
+/* Estilo para campos de entrada */
+input {
+  border-radius: 5px;
+}
