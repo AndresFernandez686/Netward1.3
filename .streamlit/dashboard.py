@@ -1,0 +1,195 @@
+import streamlit as st
+
+def admin_dashboard_ui():
+    st.header("Panel de Control")
+    
+    # Usar el componente html para insertar tu dashboard personalizado
+    st.components.v1.html("""
+    <div class="dashboard-container">
+        <div class="dashboard-title">
+            <h2>Panel de Control</h2>
+        </div>
+        
+        <!-- Tarjetas de resumen -->
+        <div class="card-container">
+            <div class="card" id="card-products">
+                <div class="card-icon">📦</div>
+                <div class="card-content">
+                    <h3 class="card-title">Productos</h3>
+                    <p class="card-value" id="total-productos">--</p>
+                </div>
+            </div>
+            
+            <div class="card" id="card-inventory">
+                <div class="card-icon">🧊</div>
+                <div class="card-content">
+                    <h3 class="card-title">Inventario</h3>
+                    <p class="card-value" id="porcentaje-stock">--</p>
+                </div>
+            </div>
+            
+            <div class="card" id="card-delivery">
+                <div class="card-icon">🚚</div>
+                <div class="card-content">
+                    <h3 class="card-title">Delivery</h3>
+                    <p class="card-value" id="ventas-delivery">--</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Indicadores de estado -->
+        <div class="status-container">
+            <div class="status-item">
+                <div class="status-title">Estado del sistema:</div>
+                <div class="status-indicator online">
+                    <span class="status-dot"></span>
+                    <span class="status-text">En línea</span>
+                </div>
+            </div>
+            <div class="status-item">
+                <div class="status-title">Última actualización:</div>
+                <div class="status-value" id="last-update">--</div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .dashboard-container {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dashboard-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-title h2 {
+        color: #333;
+        font-size: 1.5em;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 15px;
+        width: 200px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+
+    .card-icon {
+        font-size: 2.5em;
+        margin-right: 15px;
+    }
+
+    .card-content {
+        flex-grow: 1;
+    }
+
+    .card-title {
+        margin: 0;
+        font-size: 1em;
+        color: #555;
+    }
+
+    .card-value {
+        margin: 5px 0 0 0;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #0066ff;
+    }
+
+    .status-container {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .status-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .status-title {
+        font-weight: bold;
+        margin-right: 8px;
+        color: #555;
+    }
+
+    .status-indicator {
+        display: flex;
+        align-items: center;
+    }
+
+    .status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+    .online .status-dot {
+        background-color: #2ecc71;
+        box-shadow: 0 0 5px #2ecc71;
+    }
+
+    .online .status-text {
+        color: #2ecc71;
+    }
+
+    .status-value {
+        color: #555;
+    }
+
+    #card-products .card-icon {
+        color: #3498db;
+    }
+
+    #card-inventory .card-icon {
+        color: #9b59b6;
+    }
+
+    #card-delivery .card-icon {
+        color: #e67e22;
+    }
+    </style>
+
+    <script>
+        // Función para actualizar los datos del dashboard
+        function updateDashboard() {
+            // En una implementación real, aquí podrías obtener datos desde tu aplicación
+            // Por ahora, mostramos valores de ejemplo
+            document.getElementById('total-productos').textContent = "124";
+            document.getElementById('porcentaje-stock').textContent = "68%";
+            document.getElementById('ventas-delivery').textContent = "12 hoy";
+            
+            const now = new Date();
+            document.getElementById('last-update').textContent = now.toLocaleTimeString('es-ES');
+        }
+        
+        // Actualizar al cargar
+        updateDashboard();
+    </script>
+    """, height=600)
